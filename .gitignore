@@ -1,0 +1,5 @@
+node-chat-socket/node_modules/*
+/.idea/
+scenario-11/.idea
+scenario-11/*.iml
+scenario-11/target/
