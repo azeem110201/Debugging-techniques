@@ -22,12 +22,13 @@
   display: none;
 }
 
-/*
-.row_poster:hover {
-  transform: scale(1.11);
+
+.row_poster:hover{
+  transform: scale(1.12);
+  cursor: pointer;
 }
 
-*/
+
 
 .row_posterLarge {
   max-height: 250px;
