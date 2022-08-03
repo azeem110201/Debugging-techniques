@@ -1,7 +1,6 @@
 package test;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@org.springframework.stereotype.Repository
-public interface TestRepository extends CrudRepository<TestEntity, Long> {
+public interface TestRepository extends JpaRepository<TestEntity, Long> {
 }
