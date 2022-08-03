@@ -38,7 +38,7 @@ createMessageHTML = message => {
 	if (message.type === messageTypes.LOGIN) {
 		return `
 			<p class="secondary-text text-center mb-2">${
-				message.author
+				usernameInput.value
 			} joined the chat...</p>
 		`;
 	}
@@ -75,7 +75,7 @@ sendBtn.addEventListener('click', e => {
 	const day = date.getDate();
 	const year = date.getFullYear();
 	const dateString = `${month}/${day}/${year}`;
-	const dateString = `${month}/${day}`;
+	// const dateString = `${month}/${day}`;
 	
 
 
