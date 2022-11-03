@@ -79,12 +79,20 @@ public class DeadlockDemo {
          */
         private void transfer(Account fromAccount, Account toAccount, int transferAmount) throws OverdrawnException {
 
-            synchronized (fromAccount) {
-                synchronized (toAccount) {
-                    fromAccount.withdraw(transferAmount);
-                    toAccount.deposit(transferAmount);
-                }
+            synchronized (fromAccount){
+                fromAccount.withdraw(transferAmount);
             }
+
+            synchronized (toAccount) {
+                toAccount.deposit(transferAmount);
+            }
+
+//            synchronized (fromAccount) {
+//                synchronized (toAccount) {
+//                    fromAccount.withdraw(transferAmount);
+//                    toAccount.deposit(transferAmount);
+//                }
+//            }
         }
     }
 }
