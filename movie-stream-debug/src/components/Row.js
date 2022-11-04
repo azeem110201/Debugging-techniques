@@ -32,7 +32,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       setTrailerUrl("");
     } else {
        
-      for (var i=0; i<10000000000; i++) {}
+      // for (var i=0; i<10000000000; i++) {}
       let trailerurl = await axios.get(
         `/movie/${movie.id}/videos?api_key=fb34530271b349314af0de263d16ab5a`
       );
@@ -45,7 +45,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       <h2>{title}</h2>
 
       <div className="row_posters">
-        {movies.map(
+        {movies.slice(0, 9).map(
           (movie) =>
             movie.backdrop_path !== null && (
               <img
