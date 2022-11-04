@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import test.validation.NonNegative;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "test_entity")
@@ -11,11 +12,11 @@ import javax.validation.constraints.NotNull;
 public class TestEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotNull(message = "not blank number")
-    @NonNegative(message = "number cannot be negative")
+    @NonNegative(value = 0, message = "number cannot be negative")
     private Long number;
 
     public Long getId() {

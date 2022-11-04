@@ -10,9 +10,9 @@ public class TestServiceImpl implements TestService {
     @Autowired
     TestRepository testRepository;
 
-    public TestServiceImpl(TestRepository testRepository) {
-
-    }
+//    public TestServiceImpl(TestRepository testRepository) {
+//
+//    }
 
     @Override
     public TestEntity save(TestEntity testEntity) {

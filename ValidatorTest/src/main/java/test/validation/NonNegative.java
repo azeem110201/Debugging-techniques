@@ -15,6 +15,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface NonNegative {
 
+    long value();
+
     String message() default "No Negative value";
 
     Class<?>[] groups() default {};
