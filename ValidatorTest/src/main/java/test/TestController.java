@@ -1,7 +1,10 @@
 package test;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -19,7 +22,10 @@ public class TestController {
     }
 
     @PostMapping("${request.mapping}")
-    public TestEntity funTest(@Valid @RequestBody TestEntity testEntity) {
+    public TestEntity funTest(@Valid @RequestBody TestEntity testEntity, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "bad request");
+        }
         return testService.save(testEntity);
     }
 
