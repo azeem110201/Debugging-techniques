@@ -17,4 +17,4 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Fix the testcase App.test.js to replicate the drag and drop feature
+Fix the testcase App.test.js to replicate the drag and drop feature. You can use any other library for testing
